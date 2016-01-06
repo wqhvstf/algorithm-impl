@@ -25,4 +25,16 @@ public class SortTest {
 		Assert.assertTrue(ints[5] == 59);
 	}
 
+	@Test
+	public void TestMergeSort() {
+		Integer[] tempMerge = new Integer[] { 1, 4, 7, 11, 14, 17, 2, 4, 6, 8, 10, 20, 30, 40 };
+		Sort.mergeSort(tempMerge, new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1.intValue() - o2.intValue();
+			}
+		});
+		Assert.assertTrue(tempMerge[5] == 7);
+	}
+
 }
